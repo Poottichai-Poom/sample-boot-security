@@ -12,7 +12,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/api/public/**").permitAll() // Allow public access
+                .antMatchers("/secure/**").permitAll() // Allow public access
                 .anyRequest().authenticated() // Require authentication for other requests
                 .and()
                 .csrf().disable() // Disable CSRF (http://www.baeldung.com/spring-security-csrf)
